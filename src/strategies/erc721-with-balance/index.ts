@@ -27,7 +27,9 @@ export async function strategy(
   return Object.fromEntries(
     response.map((value, i) => [
       addresses[i],
-      parseInt(formatUnits(value.toString(), 0)) >= (options.minBalance || 1) ? 1 : 0
+      parseInt(formatUnits(value.toString(), 0)) >= (options.minBalance || 1)
+        ? 1
+        : 0
     ])
   );
 }
